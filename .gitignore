@@ -1,0 +1,14 @@
+# ignore everything
+*
+# But
+!.gitignore
+!.zshrc
+!.tmux.conf
+!.alacritty.yml
+!.config
+!.config/starship.toml
+!.config/nvim
+!.config/nvim/*
+!.config/nvim/**/*
+!.config/karabiner
+!.config/karabiner/karabiner.json
