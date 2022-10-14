@@ -12,4 +12,6 @@
 !.config/nvim/**/*
 !.config/karabiner
 !.config/karabiner/karabiner.json
+!.zx
+!.zx/*
 !.zx/**/*
