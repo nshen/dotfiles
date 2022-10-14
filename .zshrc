@@ -117,7 +117,12 @@ alias del="rmtrash"
 alias l="ls -alh"
 alias lg="lazygit"
 
-alias note="vim ~/github/docs/note.md"
+alias note="vim ~/github/docs/index.md"
+alias brain="vim ~/github/docs/index.md"
+alias glide="vim ~/github/docs/glide.md"
+
+alias ssh-cube="ssh -i ~/.ssh/cubecloud 103.170.72.154"
+alias ssh-justhost="ssh -i ~/.ssh/cubecloud 209.209.114.121"
 
 # proxy -----------------------------------------------------
 alias ip="curl -i cip.cc"
@@ -134,8 +139,10 @@ function proxy() {
     git config --global http.proxy "$HTTP_ADDR"
     git config --global https.proxy "$HTTP_ADDR"
     # npm
-    # npm config set proxy "$HTTP_ADDR" 
-    # npm config set https-proxy "$HTTP_ADDR" 
+    npm config set proxy "$HTTP_ADDR" 
+    npm config set https-proxy "$HTTP_ADDR" 
+    npm config set registry http://registry.npmjs.org/
+    npm config set strict-ssl false
 
     # declare
     echo "current proxy status: using $PROXY_ADDR, proxying"
@@ -153,8 +160,34 @@ function unproxy() {
     git config --global --unset http.proxy
     git config --global --unset https.proxy
     # npm
-    # npm config delete proxy
-    # npm config delete https-proxy
+     npm config delete proxy
+     npm config delete https-proxy
+     npm config delete registry
+     npm config delete strict-ssl
+    # declare
+    echo "current proxy status:  direct connect, not proxying"
+    ip
+}
+
+function proxynpm() {
+    # npm
+    npm config set proxy "$HTTP_ADDR" 
+    npm config set https-proxy "$HTTP_ADDR" 
+    npm config set registry http://registry.npmjs.org/
+    npm config set strict-ssl false
+
+    # declare
+    echo "current proxy status: using $PROXY_ADDR, proxying"
+    ip
+}
+
+
+function unproxynpm() {
+    # npm
+     npm config delete proxy
+     npm config delete https-proxy
+     npm config delete registry
+     npm config delete strict-ssl
     # declare
     echo "current proxy status:  direct connect, not proxying"
     ip
@@ -175,5 +208,16 @@ export NVM_DIR="$HOME/.nvm"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 # golang
 export GOPATH=$HOME/golang
-export GOROOT="$(brew --prefix golang)/libexec"
+# export GOROOT="$(brew --prefix golang)/libexec"
+export GOROOT=/opt/homebrew/opt/go@1.17/libexec
+
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+
+export PNPM_HOME="/Users/nn/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+
+# my google zx shell scripts
+export ZX_HOME=$HOME/.zx
+export PATH="$ZX_HOME:$PATH"
