@@ -142,7 +142,7 @@ function proxy() {
     npm config set proxy "$HTTP_ADDR" 
     npm config set https-proxy "$HTTP_ADDR" 
     npm config set registry http://registry.npmjs.org/
-    npm config set strict-ssl false
+    # npm config set strict-ssl false
 
     # declare
     echo "current proxy status: using $PROXY_ADDR, proxying"
@@ -163,7 +163,7 @@ function unproxy() {
      npm config delete proxy
      npm config delete https-proxy
      npm config delete registry
-     npm config delete strict-ssl
+     # npm config delete strict-ssl
     # declare
     echo "current proxy status:  direct connect, not proxying"
     ip
@@ -209,11 +209,12 @@ export NVM_DIR="$HOME/.nvm"
 # golang
 export GOPATH=$HOME/golang
 # export GOROOT="$(brew --prefix golang)/libexec"
-export GOROOT=/opt/homebrew/opt/go@1.17/libexec
-
+# export GOROOT=/opt/homebrew/opt/go@1.17/libexec
+export GOROOT=/opt/homebrew/opt/go@1.18/libexec
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+# export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
 
+# node
 export PNPM_HOME="/Users/nn/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
