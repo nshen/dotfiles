@@ -71,7 +71,7 @@ ZSH_THEME=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting 必须是最后一个
-plugins=(tmux git autojump zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(tmux git autojump zsh-autosuggestions zsh-syntax-highlighting evalcache)
 
 # ZSH_TMUX_AUTOSTART=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#2ac3de,bg=#273644"
@@ -117,7 +117,7 @@ alias del="rmtrash"
 alias l="ls -alh"
 alias lg="lazygit"
 
-alias note="vim ~/github/docs/index.md"
+alias note="vim ~/github/docs/notebook.md"
 alias brain="vim ~/github/docs/index.md"
 alias glide="vim ~/github/docs/glide.md"
 
@@ -207,10 +207,20 @@ export NVM_DIR="$HOME/.nvm"
 # python 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 # golang
-export GOPATH=$HOME/golang
+# export GOPATH=$HOME/golang
 # export GOROOT="$(brew --prefix golang)/libexec"
 # export GOROOT=/opt/homebrew/opt/go@1.17/libexec
-export GOROOT=/opt/homebrew/opt/go@1.18/libexec
+# export GOROOT=/opt/homebrew/opt/go@1.18/libexec
+
+# compass goroot gopath-----------
+export GOPATH=$HOME/development/urbancompass/build-support/go
+export GOROOT=$HOME/development/urbancompass/build-support/go/sdk
+# eval "$(~/development/urbancompass/scripts/go activate)"
+# _evalcache ~/development/urbancompass/scripts/go activate
+# --------------------------------
+
+
+
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 # export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
 
@@ -222,3 +232,10 @@ export PATH="$PNPM_HOME:$PATH"
 # my google zx shell scripts
 export ZX_HOME=$HOME/.zx
 export PATH="$ZX_HOME:$PATH"
+# -----------
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export IGNORE_PYTHON_VERSION_REQUIREMENT="1"  ##compass5ea843
+export GITROOT="/Users/nn/development"  ##compass5ea843
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"  ##compass5ea843
+

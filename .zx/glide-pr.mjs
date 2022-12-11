@@ -9,11 +9,12 @@ try {
 }
 
 let tag = "";
+const choices = ["Chore", "Feat", "Fix", "Maint", "Build", "Docs", "Chore"]
 while (tag === "") {
-  tag = await question(`Tag? (Chore/Feat/Fix) `, {
-    choices: ["Chore", "Feat", "Fix"],
+  tag = await question(`Tag? (${choices.join('/')}) `, {
+    choices: choices,
   });
-  if (!["Chore", "Feat", "Fix"].includes(tag)) tag = "";
+  if (!choices.includes(tag)) tag = "";
 }
 
 let id = "";
