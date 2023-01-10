@@ -71,8 +71,12 @@ ZSH_THEME=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting 必须是最后一个
-plugins=(tmux git autojump zsh-autosuggestions zsh-syntax-highlighting evalcache)
-
+# plugins=(tmux git autojump zsh-autosuggestions zsh-syntax-highlighting evalcache)
+plugins=(tmux git autojump)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
+eval "$(starship init zsh)"
 # ZSH_TMUX_AUTOSTART=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#2ac3de,bg=#273644"
 
@@ -104,9 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#- zsh ---------------------------------------------------
-[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
-eval "$(starship init zsh)"
 
 # alias ------------------------------------------------------
 alias v="nvim"
@@ -193,49 +194,29 @@ function unproxynpm() {
     ip
 }
 
-# compass --------------------------------------------------
-alias cx="compass"
-alias cw="compass workspace"
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/compass compass
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # python 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
 # golang
 # export GOPATH=$HOME/golang
 # export GOROOT="$(brew --prefix golang)/libexec"
 # export GOROOT=/opt/homebrew/opt/go@1.17/libexec
 # export GOROOT=/opt/homebrew/opt/go@1.18/libexec
 
-# compass goroot gopath-----------
-export GOPATH=$HOME/development/urbancompass/build-support/go
-export GOROOT=$HOME/development/urbancompass/build-support/go/sdk
-# eval "$(~/development/urbancompass/scripts/go activate)"
-# _evalcache ~/development/urbancompass/scripts/go activate
-# --------------------------------
 
-
-
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+# export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 # export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
 
 # node
-export PNPM_HOME="/Users/nn/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="/Users/nn/Library/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
 
 
 # my google zx shell scripts
 export ZX_HOME=$HOME/.zx
 export PATH="$ZX_HOME:$PATH"
-# -----------
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export IGNORE_PYTHON_VERSION_REQUIREMENT="1"  ##compass5ea843
-export GITROOT="/Users/nn/development"  ##compass5ea843
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"  ##compass5ea843
 
