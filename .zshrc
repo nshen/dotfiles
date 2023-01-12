@@ -120,15 +120,14 @@ alias lg="lazygit"
 
 alias note="vim ~/github/docs/notebook.md"
 alias brain="vim ~/github/docs/index.md"
-alias glide="vim ~/github/docs/glide.md"
 
-alias ssh-cube="ssh -i ~/.ssh/cubecloud 103.170.72.154"
 alias ssh-justhost="ssh -i ~/.ssh/cubecloud 209.209.114.121"
 
 # proxy -----------------------------------------------------
-alias ip="curl -i cip.cc"
-export SOCKS5_ADDR="socks5://127.0.0.1:1086"
-export HTTP_ADDR="http://127.0.0.1:1086"
+alias ip="curl -i ip.sb"
+# alias ip="curl -i cip.cc"
+export SOCKS5_ADDR="socks5://127.0.0.1:7890"
+export HTTP_ADDR="http://127.0.0.1:7890"
 function proxy() {
     export all_proxy="$SOCKS5_ADDR"
     export http_proxy="$HTTP_ADDR"
