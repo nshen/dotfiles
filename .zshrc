@@ -124,8 +124,8 @@ alias brain="vim ~/github/docs/index.md"
 alias ssh-justhost="ssh -i ~/.ssh/cubecloud 209.209.114.121"
 
 # proxy -----------------------------------------------------
-alias ip="curl -i ip.sb"
-# alias ip="curl -i cip.cc"
+# alias ip="curl -i ip.sb"
+alias ip="curl -i cip.cc"
 export SOCKS5_ADDR="socks5://127.0.0.1:7890"
 export HTTP_ADDR="http://127.0.0.1:7890"
 function proxy() {
