@@ -118,8 +118,9 @@ alias del="rmtrash"
 alias l="ls -alh"
 alias lg="lazygit"
 
-alias note="vim ~/github/docs/notebook.md"
-alias brain="vim ~/github/docs/index.md"
+alias note="nvim ~/github/docs/notebook.md"
+alias brain="nvim ~/github/docs/index.md"
+alias todo="nvim ~/github/docs/2022-08-06-todo.md"
 
 alias ssh-justhost="ssh -i ~/.ssh/cubecloud 209.209.114.121"
 
