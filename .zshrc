@@ -113,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias im="nvim"
 alias buou="brew update && brew outdated && brew upgrade && brew cleanup"
 alias del="rmtrash"
 alias l="ls -alh"
@@ -125,27 +126,19 @@ alias todo="nvim ~/github/docs/2022-08-06-todo.md"
 alias ssh-justhost="ssh -i ~/.ssh/cubecloud 209.209.114.121"
 
 # proxy -----------------------------------------------------
-# alias ip="curl -i ip.sb"
-alias ip="curl -i cip.cc"
+alias ip="curl ip.sb"
+# alias ip="curl -i cip.cc"
 export SOCKS5_ADDR="socks5://127.0.0.1:7890"
 export HTTP_ADDR="http://127.0.0.1:7890"
 function proxy() {
     export all_proxy="$SOCKS5_ADDR"
     export http_proxy="$HTTP_ADDR"
     export https_proxy="$HTTP_ADDR"
+
     export ALL_PROXY="$SOCKS5_ADDR"
     export HTTP_PROXY="$HTTP_ADDR"
     export HTTPS_PROXY="$HTTP_ADDR"
-    # git
-    git config --global http.proxy "$HTTP_ADDR"
-    git config --global https.proxy "$HTTP_ADDR"
-    # npm
-    npm config set proxy "$HTTP_ADDR" 
-    npm config set https-proxy "$HTTP_ADDR" 
-    npm config set registry http://registry.npmjs.org/
-    # npm config set strict-ssl false
 
-    # declare
     echo "current proxy status: using $PROXY_ADDR, proxying"
     ip
 }
@@ -157,15 +150,6 @@ function unproxy() {
     unset ALL_PROXY
     unset HTTP_PROXY
     unset HTTPS_PROXY
-    # git
-    git config --global --unset http.proxy
-    git config --global --unset https.proxy
-    # npm
-     npm config delete proxy
-     npm config delete https-proxy
-     npm config delete registry
-     # npm config delete strict-ssl
-    # declare
     echo "current proxy status:  direct connect, not proxying"
     ip
 }
@@ -194,9 +178,40 @@ function unproxynpm() {
     ip
 }
 
+function proxygit() {
+
+    # git
+    git config --global http.proxy "$HTTP_ADDR"
+    git config --global https.proxy "$HTTP_ADDR"
+
+    # npm
+    npm config set proxy "$HTTP_ADDR" 
+    npm config set https-proxy "$HTTP_ADDR" 
+    npm config set registry http://registry.npmjs.org/
+    npm config set strict-ssl false
+
+    # declare
+    echo "current proxy status: using $PROXY_ADDR, proxying"
+    ip
+}
+
+
+function unproxygit() {
+    # git
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+    # declare
+    echo "current proxy status:  direct connect, not proxying"
+    ip
+}
+
 
 # python 
 # . /opt/homebrew/opt/asdf/libexec/asdf.sh
+# 优先使用homebrew安装的版本
+export PATH="/opt/homebrew/bin:$PATH"
+
+
 # golang
 # export GOPATH=$HOME/golang
 # export GOROOT="$(brew --prefix golang)/libexec"
@@ -235,3 +250,16 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# foundry
+export PATH="$HOME/.foundry/bin:$PATH"
+
+# solana
+# https://solana.com/docs/intro/installation
+export PATH="/Users/nn/.local/share/solana/install/active_release/bin:$PATH"
+
+# API
+export DEEPSEEK_API_KEY="sk-a384502a72994e4eabd5d3f59f966a38"
+export DEEPSEEK_API_KEY_S="sk-qwjzodehbruflovtuskkqcorgwzuienysruabndfsvtojofa"
+export DEEPSEEK_API_ALIYUN="sk-1646a1e8e8c94a72a3deef3047eb76e6"
+
+# export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890

@@ -1,449 +1,284 @@
-live_config_reload = true
+# https://alacritty.org/config-alacritty.html
 
-[[colors.indexed_colors]]
-color = "0xff9e64"
-index = 16
+###########
+# GENERAL #
+###########
 
-[[colors.indexed_colors]]
-color = "0xdb4b4b"
-index = 17
+[general]
 
-[colors.bright]
-black = "0x414868"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xc0caf5"
-yellow = "0xe0af68"
+# Import additional configuration files
+import = []
 
-[colors.normal]
-black = "0x1D202F"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xa9b1d6"
-yellow = "0xe0af68"
+# Working directory
+working_directory = "None"  # Default: "None"
 
-[colors.primary]
-background = "0x24283b"
-foreground = "0xc0caf5"
+# Live config reload (changes require restart)
+live_config_reload = true  # Default: true
 
-[font]
-size = 16.0
+# Offer IPC using alacritty msg (unix only)
+ipc_socket = true  # Default: true
 
-[font.bold]
-family = "FuraMono Nerd Font Mono"
+#######
+# ENV #
+#######
 
-[font.bold_italic]
-family = "FuraMono Nerd Font Mono"
+[env]
 
-[font.italic]
-family = "FuraMono Nerd Font Mono"
+# Needed for $HOME/.vimrc
+TERM = "xterm-256color"
 
-[font.normal]
-family = "FuraMono Nerd Font Mono"
-
-[[keyboard.bindings]]
-action = "ReceiveChar"
-key = "F"
-mods = "Command|Control"
-
-[[keyboard.bindings]]
-chars = "\u001Ba"
-key = "A"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bb"
-key = "B"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bc"
-key = "C"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bd"
-key = "D"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Be"
-key = "E"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bf"
-key = "F"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bg"
-key = "G"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bh"
-key = "H"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bi"
-key = "I"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bj"
-key = "J"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bk"
-key = "K"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bl"
-key = "L"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bm"
-key = "M"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bn"
-key = "N"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bo"
-key = "O"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bp"
-key = "P"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bq"
-key = "Q"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Br"
-key = "R"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bs"
-key = "S"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bt"
-key = "T"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bu"
-key = "U"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bv"
-key = "V"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bw"
-key = "W"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bx"
-key = "X"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001By"
-key = "Y"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bz"
-key = "Z"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001BA"
-key = "A"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BB"
-key = "B"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BC"
-key = "C"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BD"
-key = "D"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BE"
-key = "E"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BF"
-key = "F"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BG"
-key = "G"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BH"
-key = "H"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BI"
-key = "I"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BJ"
-key = "J"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BK"
-key = "K"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BL"
-key = "L"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BM"
-key = "M"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BN"
-key = "N"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BO"
-key = "O"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BP"
-key = "P"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BQ"
-key = "Q"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BR"
-key = "R"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BS"
-key = "S"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BT"
-key = "T"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BU"
-key = "U"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BV"
-key = "V"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BW"
-key = "W"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BX"
-key = "X"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BY"
-key = "Y"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BZ"
-key = "Z"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B1"
-key = "Key1"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B2"
-key = "Key2"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B3"
-key = "Key3"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B4"
-key = "Key4"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B5"
-key = "Key5"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B6"
-key = "Key6"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B7"
-key = "Key7"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B8"
-key = "Key8"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B9"
-key = "Key9"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B0"
-key = "Key0"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u0000"
-key = "Space"
-mods = "Control"
-
-# [[keyboard.bindings]]
-# chars = "\u001B`"
-# key = "Grave"
-# mods = "Alt"
-#
-# [[keyboard.bindings]]
-# chars = "\u001B~"
-# key = "Grave"
-# mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B*"
-key = "Key8"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B#"
-key = "Key3"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B."
-key = "Period"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B,"
-key = "Comma"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B<"
-key = "Comma"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B>"
-key = "Period"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B_"
-key = "Minus"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B%"
-key = "Key5"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B^"
-key = "Key6"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B\\"
-key = "Backslash"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B|"
-key = "Backslash"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B\u007F"
-key = "Back"
-mods = "Alt|Shift"
+##########
+# WINDOW #
+##########
 
 [window]
-decorations = "full"
-dynamic_padding = true
-opacity = 1.0
-startup_mode = "Maximized"
-option_as_alt = "OnlyLeft"
 
-[window.padding]
-x = 4
-y = 4
+# Window dimensions
+dimensions = { columns = 0, lines = 0 }  # Default: columns = 0, lines = 0
+
+# Window startup position
+position = "None"  # Default: "None"
+
+# Padding
+padding = { x = 2, y = 2 }  # Default: x = 0, y = 0
+
+# Dynamic padding
+dynamic_padding = true  # Default: false
+
+# Window decorations
+decorations = "None"  # Default: "Full"
+
+# Opacity
+opacity = 1.0  # Default: 1.0
+
+# Blur (macOS/KDE Wayland only)
+blur = false  # Default: false
+
+# Startup mode
+startup_mode = "Windowed"  # Default: "Windowed"
+
+# Window title
+title = "Alacritty"  # Default: "Alacritty"
+
+# Dynamic title
+dynamic_title = true  # Default: true
+
+# Window class (Linux/BSD only)
+class = { instance = "Alacritty", general = "Alacritty" }  # Default: instance = "Alacritty", general = "Alacritty"
+
+# Decorations theme variant
+decorations_theme_variant = "None"  # Default: "None"
+
+# Resize increments
+resize_increments = false  # Default: false
+
+# Option as Alt (macOS only)
+option_as_alt = "Both"  # Default: "None"
+
+level = "Normal"
+
+#############
+# SCROLLING #
+#############
+
+[scrolling]
+
+# Maximum number of lines in the scrollback buffer
+history = 10000  # Default: 10000
+
+# Number of lines scrolled for every input scroll increment
+multiplier = 1  # Default: 3
+
+########
+# FONT #
+########
+
+[font]
+
+# style: Light, Regular, Medium, SemiBold, Bold, Retina 
+# Normal font style
+normal = { family = "FiraCode Nerd Font Mono", style = "Light" }  # Default for Linux/BSD: "monospace", Regular
+
+# Bold font style
+bold = { style = "SemiBold" }  # Inherits family from normal, Default style: Bold
+
+# Italic font style
+italic = { style = "Light" }  # Inherits family from normal, Default style: Italic
+
+# Bold Italic font style
+bold_italic = { style = "Bold" }  # Inherits family from normal, Default style: Bold Italic
+
+# Font size in points
+size = 14  # Default: 11.25
+
+# Offset is extra space around each character
+offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
+
+# Glyph offset determines the locations of the glyphs within their cells
+glyph_offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
+
+# Use built-in font for box drawing characters
+builtin_box_drawing = true  # Default: true
+
+##########
+# COLORS #
+##########
+
+[colors]
+
+# -----------------------------------------------------------------------------
+# TokyoNight Alacritty Colors
+# Theme: Tokyo Night Storm
+# Upstream: https://github.com/folke/tokyonight.nvim/raw/main/extras/alacritty/tokyonight_storm.toml
+# -----------------------------------------------------------------------------
+
+# Default colors
+[colors.primary]
+background = '#24283b'
+foreground = '#c0caf5'
+
+#[colors.cursor]
+#cursor = '#c0caf5'
+#text = '#24283b'
+
+# Normal colors
+[colors.normal]
+black = '#1d202f'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#a9b1d6'
+
+# Bright colors
+[colors.bright]
+black = '#414868'
+red = '#ff899d'
+green = '#9fe044'
+yellow = '#faba4a'
+blue = '#8db0ff'
+magenta = '#c7a9ff'
+cyan = '#a4daff'
+white = '#c0caf5'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#ff9e64'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#db4b4b'
+
+########
+# BELL #
+########
+
+[bell]
+
+# Visual bell animation effect
+animation = "Linear"  # Default: "Linear"
+
+# Duration of the visual bell flash in milliseconds
+duration = 0  # Default: 0
+
+# Visual bell animation color
+color = "#ffffff"  # Default: "#ffffff"
+
+# Command executed when the bell is rung
+command = "None"  # Default: "None"
+
+#############
+# SELECTION #
+#############
+
+[selection]
+
+# Characters that are used as separators for "semantic words" in Alacritty
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"  # Default: ",│`|:\"' ()[]{}<>\t"
+
+# When set to true, selected text will be copied to the primary clipboard
+save_to_clipboard = false  # Default: false
+
+##########
+# CURSOR #
+##########
+
+[cursor]
+
+# Cursor style
+style = { shape = "Block", blinking = "On" }  # Default: shape = "Block", blinking = "Off"
+
+# Vi mode cursor style (falls back to the active value of the normal cursor if "None")
+vi_mode_style = "None"  # Default: "None"
+
+# Cursor blinking interval in milliseconds
+blink_interval = 750  # Default: 750
+
+# Time after which cursor stops blinking, in seconds
+blink_timeout = 0  # Default: 5
+
+# When true, the cursor will be rendered as a hollow box when the window is not focused
+unfocused_hollow = true  # Default: true
+
+# Thickness of the cursor relative to the cell width
+thickness = 0.15  # Default: 0.15
+
+############
+# TERMINAL #
+############
+
+[terminal]
+
+# Controls the OSC 52 behavior for clipboard interactions
+osc52 = "CopyPaste"  # Default: "OnlyCopy"
+
+#########
+# MOUSE #
+#########
+
+[mouse]
+
+# When true, the cursor is temporarily hidden when typing
+hide_when_typing = true  # Default: false
+
+# Mouse bindings (actual bindings need to be defined as per user preference)
+# Example: bindings = [{ mouse = "Left", action = "Paste" }]
+bindings = []
+
+#########
+# HINTS #
+#########
+
+[hints]
+
+# Define the keys used for hint labels
+alphabet = "jfkdls;ahgurieowpq"  # Default: "jfkdls;ahgurieowpq"
+
+# Enable specific hints
+#[[hints.enabled]]
+# Example configuration (actual settings to be defined based on user preference)
+# regex = "..."
+# hyperlinks = true
+# post_processing = true
+# persist = false
+# action = "..."
+# command = "..."
+# binding = { key = "...", mods = "...", mode = "..." }
+# mouse = { mods = "...", enabled = true }
+
+# KEYBOARD section of Alacritty configuration
+
+[keyboard]
+
+# Define keyboard bindings here
+# Example placeholder (actual bindings need to be defined based on user preference)
+bindings = [
+    # { key = "Key", mods = "Modifiers", action = "Action" },
+    # { key = "Key", mods = "Modifiers", chars = "Characters to send" },
+    # ...
+    { key = "`", action = "ToggleFullscreen" },
+    { key = "V", mods = "Control|Shift", action = "ToggleViMode" }
+]
