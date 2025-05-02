@@ -97,7 +97,7 @@ multiplier = 1  # Default: 3
 
 # style: Light, Regular, Medium, SemiBold, Bold, Retina 
 # Normal font style
-normal = { family = "FiraCode Nerd Font Mono", style = "Light" }  # Default for Linux/BSD: "monospace", Regular
+normal = { family = "FiraCode Nerd Font Mono", style = "Retina" }  # Default for Linux/BSD: "monospace", Regular
 
 # Bold font style
 bold = { style = "SemiBold" }  # Inherits family from normal, Default style: Bold
@@ -279,6 +279,6 @@ bindings = [
     # { key = "Key", mods = "Modifiers", action = "Action" },
     # { key = "Key", mods = "Modifiers", chars = "Characters to send" },
     # ...
-    { key = "`", action = "ToggleFullscreen" },
+    { key = "`", mods = "Control", action = "ToggleFullscreen" },
     { key = "V", mods = "Control|Shift", action = "ToggleViMode" }
 ]
